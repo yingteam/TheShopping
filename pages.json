@@ -76,6 +76,16 @@
 				}
 			}
 		}, {
+			"path": "pages/public/register",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "slide-in-bottom"
+				}
+			}
+		},{
 			"path": "pages/user/user",
 			"style": {
 				"navigationBarTitleText": "我的",
@@ -132,7 +142,15 @@
 			"style": {
 				"navigationBarTitleText": "创建订单"
 			}
-		}, {
+		},{
+			"path": "pages/record/record",
+			"style": {
+				"navigationBarTitleText": "历史记录",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},{
 			"path": "pages/address/address",
 			"style": {
 				"navigationBarTitleText": "收货地址"

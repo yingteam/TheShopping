@@ -5,9 +5,9 @@
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">LOGIN</view>
+			<view class="left-top-sign">register</view>
 			<view class="welcome">
-				欢迎回来！
+				注册您的账号！
 			</view>
 			<view class="input-content">
 				<view class="input-item">
@@ -21,90 +21,42 @@
 						@input="inputChange"
 					/>
 				</view>
-				<view class="input-item">
-					<text class="tit">密码</text>
-					<input 
-						type="mobile" 
-						value="" 
-						placeholder="8-18位不含特殊字符的数字、字母组合"
-						placeholder-class="input-empty"
-						maxlength="20"
-						password 
-						data-key="password"
-						@input="inputChange"
-						@confirm="toLogin"
-					/>
-				</view>
+				<view class="input-item" style="width:200px;">
+					<text class="tit">验证码</text>
+					<input
+					type="number"
+					placeholder="验证码"
+					maxlength="4"
+					@input="inputChange"
+					>
+					</view>
+					<view class="input-item">
+						<text class="tit">密码</text>
+						<input 
+							type="mobile" 
+							value="" 
+							placeholder="8-18位不含特殊字符的数字、字母组合"
+							placeholder-class="input-empty"
+							maxlength="20"
+							password 
+							data-key="password"
+							@input="inputChange"
+							@confirm="toregister"
+						/></view>
 			</view>
-			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
-			<view class="forget-section">
-				忘记密码?
-			</view>
-		</view>
-		<view class="register-section">
-			还没有账号?
-			<text @click="toRegist">马上注册</text>
+			<button class="confirm-btn" @click="getVer" :disabled="logining" style="width:100px;bottom:150px;right:-110px">获取验证码</button>
+			<button class="confirm-btn" @click="toregister" :disabled="logining">注册</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	import {  
-        mapMutations  
-    } from 'vuex';
-	
 	export default{
-		data(){
-			return {
-				mobile: '',
-				password: '',
-				logining: false
-			}
-		},
-		onLoad(){
-			
-		},
-		methods: {
-			...mapMutations(['login']),
-			inputChange(e){
-				const key = e.currentTarget.dataset.key;
-				this[key] = e.detail.value;
-			},
+		methods:{
 			navBack(){
 				uni.navigateBack();
-			},
-			toRegist(){
-				uni.navigateTo({
-					url: '/pages/public/register'
-				})
-			},
-			async toLogin(){
-				this.logining = true;
-				const {mobile, password} = this;
-				/* 数据验证模块
-				if(!this.$api.match({
-					mobile,
-					password
-				})){
-					this.logining = false;
-					return;
-				}
-				*/
-				const sendData = {
-					mobile,
-					password
-				};
-				const result = await this.$api.json('userInfo');
-				if(result.status === 1){
-					this.login(result.data);
-                    uni.navigateBack();  
-				}else{
-					this.$api.msg(result.msg);
-					this.logining = false;
-				}
 			}
-		},
-
+		}	
 	}
 </script>
 
