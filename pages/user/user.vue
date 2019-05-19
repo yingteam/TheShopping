@@ -192,9 +192,13 @@
 				this.coverTransform = 'translateY(0px)';
 			},
 			toLogin(){
+				if(!this.hasLogin){
 				uni.navigateTo({
 					url:'/pages/public/login'
-				})
+				})}else{
+					this.$api.msg(`跳转到个人资料`);
+				}
+				
 			}
         }  
     }  

@@ -36,9 +36,27 @@
 						]
 					}
 				}
+			} 
+		},{
+			"path":"pages/index/merchant",
+			"style": {
+				// #ifdef MP 
+				"navigationBarTitleText": "商家联盟",
+				//"navigationStyle": "custom",
+				// #endif 
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",
+						"searchInput": {
+							"backgroundColor": "rgba(240, 240, 240, .5)",
+							"borderRadius": "20px",
+							"placeholder": "请输入商品或商户名称",
+							"placeholderColor": "#666666"
+						}
+					}
+				}
 			}
-		},
-		{
+		},{
 			"path": "pages/product/product",
 			"style": {
 				"navigationBarTitleText": "详情展示",

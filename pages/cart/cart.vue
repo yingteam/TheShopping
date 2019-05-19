@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<!-- 空白页 -->
+		<!-- 空白页 -->  
 		<view v-if="!hasLogin || empty===true" class="empty">
 			<image src="/static/emptyCart.jpg" mode="aspectFit"></image>
 			<view v-if="hasLogin" class="empty-tips">
