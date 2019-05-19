@@ -17,11 +17,7 @@
 			<text class="cate-item yticon icon-fenlei1" @click="toggleCateMask('show')"></text>
 		</view>
 		<view class="goods-list">
-			<view 
-				v-for="(item, index) in goodsList" :key="index"
-				class="goods-item"
-				@click="navToDetailPage(item)"
-			>
+			<view class="goods-item" v-for="(item, index) in goodsList" :key="index" @click="navToDetailPage(item)" >
 				<view class="image-wrapper">
 					<image :src="item.image" mode="aspectFill"></image>
 				</view>
@@ -76,7 +72,7 @@
 		
 		onLoad(options){
 			// #ifdef H5
-			this.headerTop = document.getElementsByTagName('uni-page-head')[0].offsetHeight+'px';
+			this.headerTop = async () => document.getElementsByTagName('uni-page-head')[0].offsetHeight+'px';
 			// #endif
 			this.cateId = options.tid;
 			this.loadCateList(options.fid,options.sid);

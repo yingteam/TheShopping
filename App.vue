@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * vuex管理登陆状态，具体可以参考官方登陆模板示例
+	 * vuex管理登录状态，具体可以参考官方登录模板示例
 	 */
 	import { mapMutations } from 'vuex';
 	export default {
@@ -10,7 +10,7 @@
 		onLaunch: function() {
 			let userInfo = uni.getStorageSync('userInfo') || '';
 			if(userInfo.id){
-				//更新登陆状态
+				//更新登录状态
 				uni.getStorage({
 					key: 'userInfo',
 					success: (res) => {
@@ -33,11 +33,20 @@
 	/*
 		全局公共样式和字体图标
 	*/
+	@import '/static/font/font-awesome/css/font-awesome.min.css';
+	@import '/static/css/common.css';
+	
+	/* #ifdef H5 */
+	.uni-page-head-btn {
+		justify-content: center;
+	}
+	/* #endif */
+	
 	@font-face {
 		font-family: yticon;
 		font-weight: normal;
 		font-style: normal;
-		src: url('https://at.alicdn.com/t/font_1078604_w4kpxh0rafi.ttf') format('truetype');
+		src: url('/static/font/yticon-full.ttf') format('truetype');
 	}
 
 	.yticon {
@@ -362,6 +371,10 @@
 	video {
 		box-sizing: border-box;
 	}
+	text,
+	button {
+		font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif
+	}
 	/* 骨架屏替代方案 */
 	.Skeleton {
 		background: #f3f3f3;
@@ -444,6 +457,13 @@
 	}
 
 	.placeholder {
+		color: #999999;
+	}
+	
+	.bottom-end {
+		line-height: 80upx;
+		text-align: center;
+		font-size: 22upx;
 		color: #999999;
 	}
 </style>

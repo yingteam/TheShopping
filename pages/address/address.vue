@@ -28,18 +28,18 @@
 				source: 0,
 				addressList: [
 					{
-						name: '刘晓晓',
+						name: '姓名',
 						mobile: '18666666666',
-						addressName: '贵族皇仕牛排(东城店)',
-						address: '北京市东城区',
-						area: 'B区',
+						addressName: '地址地址地址地址',
+						address: '地址地址地址地址',
+						area: 'A区',
 						default: true
 					},{
-						name: '刘大大',
-						mobile: '18667766666',
-						addressName: '龙回1区12号楼',
-						address: '山东省济南市历城区',
-						area: '西单元302',
+						name: '姓名',
+						mobile: '18666666666',
+						addressName: '双流机场',
+						address: '四川省成都市',
+						area: '双流区',
 						default: false,
 					}
 				]

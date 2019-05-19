@@ -181,46 +181,75 @@ const cartList = [{
 		number: 1
 	}
 ];
+
+// 店铺列表
+const shopList = [
+	{
+		name: '精品烤肉店',
+		image: '/static/temp/shop.jpg',
+		stars: 5,
+		openTime: '18:00-23:30',
+		category: '餐饮美食|小吃',
+		address: '四川省宜宾市'
+	},
+	{
+		name: '精品烤肉店精品烤肉店精品烤肉店精品烤肉店',
+		image: '/static/temp/shop.jpg',
+		stars: 5,
+		openTime: '18:00-23:30',
+		category: '餐饮美食|小吃',
+		address: '四川省宜宾市'
+	},
+	{
+		name: '精品烤肉店',
+		image: '/static/temp/shop.jpg',
+		stars: 5,
+		openTime: '18:00-23:30',
+		category: '餐饮美食|小吃',
+		address: '四川省宜宾市'
+	},
+	{
+		name: '精品烤肉店',
+		image: '/static/temp/shop.jpg',
+		stars: 5,
+		openTime: '18:00-23:30',
+		category: '餐饮美食|小吃',
+		address: '四川省宜宾市'
+	},
+	{
+		name: '精品烤肉店',
+		image: '/static/temp/shop.jpg',
+		stars: 5,
+		openTime: '18:00-23:30',
+		category: '餐饮美食|小吃',
+		address: '四川省宜宾市'
+	}
+];
+
 //详情展示页面
 const detailData = {
-	title: '纯种金毛幼犬活体有血统证书',
-	title2: '拆家小能手 你值得拥有',
+	title: '精品烤肉饭',
+	title2: '精品烤肉饭 你值得拥有',
 	favorite: true,
 	imgList: [{
-			src: 'http://img0.imgtn.bdimg.com/it/u=2396068252,4277062836&fm=26&gp=0.jpg'
+			src: '/static/temp/shop.jpg'
 		},
 		{
 			src: 'http://img.pconline.com.cn/images/upload/upc/tx/itbbs/1309/06/c4/25310541_1378426131583.jpg'
 		},
 		{
-			src: 'http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1610/26/c4/28926240_1477451226577_mthumb.jpg'
-		},
-		{
-			src: 'http://picture.ik123.com/uploads/allimg/190219/12-1Z219105139.jpg'
-		},
-	],
-	episodeList: [
-		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+			src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558190104926&di=346b29adbca9b81b40df39170c13fc6d&imgtype=0&src=http%3A%2F%2Fjiangxi.sinaimg.cn%2F2014%2F0904%2FU8737P1332DT20140904145445.png'
+		}
 	],
 	guessList: [{
-			src: 'http://img.52z.com/upload/news/image/20180530/20180530081619_31029.jpg',
-			title: '猫眼指甲油',
-			title2: '独树一帜的免照灯猫眼指甲'
+			src: '/static/temp/shop.jpg',
+			title: '各种烤肉',
+			title2: '好吃'
 		},
 		{
-			src: 'http://m.china-7.net/uploads/14778449362891.jpg',
-			title: '创意屋',
-			title2: '创意屋形上下双层高低床'
-		},
-		{
-			src: 'http://www.k73.com/up/allimg/130415/22-130415093527.jpg',
-			title: 'MissCandy 指甲油',
-			title2: '十分适合喜欢素净的妹纸，尽显淡雅的气质'
-		},
-		{
-			src: 'http://img0.imgtn.bdimg.com/it/u=2108933440,2194129200&fm=214&gp=0.jpg	',
-			title: 'RMK 2017星空海蓝唇釉',
-			title2: '唇釉质地，上唇后很滋润。少女也会心动的蓝色，透明液体形状。'
+			src: '/static/temp/shop.jpg',
+			title: '各种烤肉',
+			title2: '美味'
 		}
 	],
 	evaList: [{
@@ -228,7 +257,7 @@ const detailData = {
 			nickname: 'Ranth Allngal',
 			time: '09-20 12:54',
 			zan: '54',
-			content: '评论不要太苛刻，不管什么产品都会有瑕疵，客服也说了可以退货并且商家承担运费，我觉得至少态度就可以给五星。'
+			content: '不要问，问就是五星好评。'
 		},
 		{
 			src: 'http://img0.imgtn.bdimg.com/it/u=2396068252,4277062836&fm=26&gp=0.jpg',
@@ -650,6 +679,7 @@ const cateList = [{
 export default {
 	carouselList,
 	cartList,
+	shopList,
 	detailData,
 	lazyLoadList,
 	userInfo,

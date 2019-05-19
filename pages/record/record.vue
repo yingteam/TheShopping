@@ -7,7 +7,7 @@
 		</view>
 		<view v-else>
 			<view class="record-list">
-				<block v-for="(item, index) in recordList" :key="item.id">
+				<block v-for="(item, index) in recordList" :key="index">
 					<view class="record-item" :class="{'b-b': index!==recordList.length-1}">
 						<view class="image-wrapper">
 							<image :src="item.image" 
@@ -19,7 +19,8 @@
 							></image>
 						</view>
 						<view class="item-right">
-							<text class="clamp title">{{item.title}}</text>
+							<text class="title">{{item.title}}</text>
+							<text class="time">2019-5-20</text>
 						</view>
 					</view>
 				</block>
@@ -40,9 +41,6 @@
 		},
 		onLoad(){
 			this.loadData();
-		},
-		computed:{
-			...mapState(['hasLogin'])
 		},
 		methods: {
 			//请求数据
@@ -76,9 +74,8 @@
 		position:relative;
 		padding:30upx 40upx;
 		.image-wrapper{
-			width: 230upx;
-			height: 230upx;
-			flex-shrink: 0;
+			width: 180upx;
+			height: 180upx;
 			background-color: transparent;
 			position:relative;
 			image{
@@ -88,16 +85,20 @@
 		.item-right{
 			display:flex;
 			flex-direction: column;
+			justify-content: space-between;
 			flex: 1;
 			overflow: hidden;
 			position:relative;
 			padding-left: 30upx;
-			.title{
+			.title {
 				font-size:$font-base + 2upx;
 				color: $font-color-dark;
-				height: 40px;
-				line-height: 40upx;
-			}	
+			}
+			.time {
+				text-align: right;
+				font-size: $font-base + 2upx;
+				color: $font-color-light;
+			}
 		}
 	}
 </style>

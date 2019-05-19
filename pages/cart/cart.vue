@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<!-- 空白页 -->  
+		<!-- 空白页 -->
 		<view v-if="!hasLogin || empty===true" class="empty">
 			<image src="/static/emptyCart.jpg" mode="aspectFit"></image>
 			<view v-if="hasLogin" class="empty-tips">
@@ -9,14 +9,17 @@
 			</view>
 			<view v-else class="empty-tips">
 				空空如也
-				<view class="navigator" @click="navToLogin">去登陆></view>
+				<view class="navigator" @click="navToLogin">去登录></view>
 			</view>
 		</view>
 		<view v-else>
 			<!-- 列表 -->
 			<view class="cart-list">
 				<block v-for="(item, index) in cartList" :key="item.id">
-					<view class="cart-item" :class="{'b-b': index!==cartList.length-1}">
+					<view
+						class="cart-item" 
+						:class="{'b-b': index!==cartList.length-1}"
+					>
 						<view class="image-wrapper">
 							<image :src="item.image" 
 								:class="[item.loaded]"

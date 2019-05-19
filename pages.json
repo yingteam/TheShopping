@@ -1,12 +1,10 @@
 {
 	"pages": [
-
 		{
 			"path": "pages/index/index",
 			"style": {
 				// #ifdef MP 
-				"navigationBarTitleText": "Dloud商城",
-				//"navigationStyle": "custom",
+				"navigationBarTitleText": "好事多共享商城",
 				// #endif 
 				"app-plus": {
 					"titleNView": {
@@ -14,11 +12,11 @@
 						"searchInput": {
 							"backgroundColor": "rgba(240, 240, 240, .5)",
 							"borderRadius": "20px",
-							"placeholder": "请输入地址 如：大钟寺",
+							"placeholder": "关键词搜索 商品/店铺",
 							"placeholderColor": "#666666"
 						},
 						"buttons": [{
-								"fontSrc": "/static/yticon.ttf",
+								"fontSrc": "/static/font/yticon-full.ttf",
 								"text": "\ue60d",
 								"fontSize": "26",
 								"color": "#303133",
@@ -26,7 +24,7 @@
 								"background": "rgba(0,0,0,0)"
 							},
 							{
-								"fontSrc": "/static/yticon.ttf",
+								"fontSrc": "/static/font/yticon-full.ttf",
 								"text": "\ue744",
 								"fontSize": "27",
 								"color": "#303133",
@@ -36,27 +34,44 @@
 						]
 					}
 				}
-			} 
-		},{
-			"path":"pages/index/merchant",
-			"style": {
-				// #ifdef MP 
-				"navigationBarTitleText": "商家联盟",
-				//"navigationStyle": "custom",
-				// #endif 
-				"app-plus": {
-					"titleNView": {
-						"type": "transparent",
-						"searchInput": {
-							"backgroundColor": "rgba(240, 240, 240, .5)",
-							"borderRadius": "20px",
-							"placeholder": "请输入商品或商户名称",
-							"placeholderColor": "#666666"
-						}
-					}
-				}
 			}
-		},{
+		},
+		{
+		    "path" : "pages/leagueList/list",
+		    "style" : {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "商家列表"
+			}
+		},
+		{
+		    "path" : "pages/league/league",
+		    "style": {
+		    	// #ifdef MP 
+		    	"navigationBarTitleText": "联盟商家",
+		    	// #endif 
+		    	"app-plus": {
+		    		"titleNView": {
+		    			"type": "transparent",
+		    			"searchInput": {
+		    				"backgroundColor": "rgba(240, 240, 240, .5)",
+		    				"borderRadius": "20px",
+		    				"placeholder": "请输入商家名称",
+		    				"placeholderColor": "#666666"
+		    			},
+						"buttons": [
+							{
+								"fontSrc": "/static/font/yticon-full.ttf",
+								"text": "\ue633",
+								"fontSize": "26",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)"
+							}
+						]
+		    		}
+		    	}
+		    }
+		},
+		{
 			"path": "pages/product/product",
 			"style": {
 				"navigationBarTitleText": "详情展示",
@@ -66,24 +81,20 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/set/set",
 			"style": {
 				"navigationBarTitleText": "设置"
 			}
 		},
-
 		{
-			"path": "pages/userinfo/userinfo",
-			"style": {
-				"navigationBarTitleText": "修改资料"
-			}
-		}, {
 			"path": "pages/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"
 			}
-		}, {
+		},
+		{
 			"path": "pages/public/login",
 			"style": {
 				"navigationBarTitleText": "",
@@ -93,7 +104,8 @@
 					"animationType": "slide-in-bottom"
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/public/register",
 			"style": {
 				"navigationBarTitleText": "",
@@ -103,38 +115,8 @@
 					"animationType": "slide-in-bottom"
 				}
 			}
-		},{
-			"path": "pages/user/user",
-			"style": {
-				"navigationBarTitleText": "我的",
-				// #ifdef MP
-				"navigationStyle": "custom",
-				// #endif
-				"app-plus": {
-					"bounce": "none",
-					"titleNView": {
-						"type": "transparent",
-						"buttons": [{
-								"fontSrc": "/static/yticon.ttf",
-								"text": "\ue60f",
-								"fontSize": "24",
-								"color": "#303133",
-								"width": "46px",
-								"background": "rgba(0,0,0,0)"
-							},
-							{
-								"fontSrc": "/static/yticon.ttf",
-								"text": "\ue744",
-								"fontSize": "28",
-								"color": "#303133",
-								"background": "rgba(0,0,0,0)",
-								"redDot": true
-							}
-						]
-					}
-				}
-			}
-		}, {
+		},
+		{
 			"path": "pages/detail/detail",
 			"style": {
 				"navigationBarTitleText": "",
@@ -144,7 +126,8 @@
 					}
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/order/order",
 			"style": {
 				"navigationBarTitleText": "我的订单",
@@ -152,33 +135,30 @@
 					"bounce": "none"
 				}
 			}
-		}, {
+		},
+		{
 			"path": "pages/money/money",
 			"style": {}
-		}, {
+		},
+		{
 			"path": "pages/order/createOrder",
 			"style": {
 				"navigationBarTitleText": "创建订单"
 			}
-		},{
-			"path": "pages/record/record",
-			"style": {
-				"navigationBarTitleText": "历史记录",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},{
+		},
+		{
 			"path": "pages/address/address",
 			"style": {
 				"navigationBarTitleText": "收货地址"
 			}
-		}, {
+		},
+		{
 			"path": "pages/address/addressManage",
 			"style": {
 				"navigationBarTitleText": ""
 			}
-		}, {
+		},
+		{
 			"path": "pages/money/pay",
 			"style": {
 				"navigationBarTitleText": "支付"
@@ -189,14 +169,14 @@
 			"style": {
 				"navigationBarTitleText": "支付成功"
 			}
-		}
-	    ,{
+		},
+		{
             "path" : "pages/notice/notice",
             "style" : {
 				"navigationBarTitleText": "通知"
 			}
-        }
-        ,{
+        },
+		{
             "path" : "pages/category/category",
             "style" : {
 				"navigationBarTitleText": "分类",
@@ -204,14 +184,50 @@
 					"bounce": "none"
 				}
 			}
-        }
-        ,{
+        },
+		{
             "path" : "pages/product/list",
             "style" : {
 				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "商品列表"
 			}
-        }
+        },
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				// #ifdef MP
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [
+							{
+								"fontSrc": "/static/font/yticon-full.ttf",
+								"text": "\ue744",
+								"fontSize": "28",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "修改资料"
+			}
+		},
+		{
+			"path": "pages/record/record",
+			"style": {
+				"navigationBarTitleText": "历史记录"
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -234,7 +250,7 @@
 				"pagePath": "pages/category/category",
 				"iconPath": "static/tab-cate.png",
 				"selectedIconPath": "static/tab-cate-current.png",
-				"text": "分类"
+				"text": "商品分类"
 			},
 			{
 				"pagePath": "pages/cart/cart",

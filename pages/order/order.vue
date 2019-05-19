@@ -13,42 +13,26 @@
 
 		<swiper :current="tabCurrentIndex" class="swiper-box" duration="300" @change="changeTab">
 			<swiper-item class="tab-content" v-for="(tabItem,tabIndex) in navList" :key="tabIndex">
-				<scroll-view 
-					class="list-scroll-content" 
-					scroll-y
-					@scrolltolower="loadData"
-				>
+				<scroll-view class="list-scroll-content" scroll-y @scrolltolower="loadData" >
 					<!-- 空白页 -->
 					<empty v-if="tabItem.loaded === true && tabItem.orderList.length === 0"></empty>
 					
 					<!-- 订单列表 -->
-					<view 
-						v-for="(item,index) in tabItem.orderList" :key="index"
-						class="order-item"
-					>
+					<view class="order-item" v-for="(item,index) in tabItem.orderList" :key="index" >
 						<view class="i-top b-b">
 							<text class="time">{{item.time}}</text>
 							<text class="state" :style="{color: item.stateTipColor}">{{item.stateTip}}</text>
-							<text 
-								v-if="item.state===9" 
-								class="del-btn yticon icon-iconfontshanchu1"
-								@click="deleteOrder(index)"
-							></text>
+							<text class="del-btn yticon icon-iconfontshanchu1" v-if="item.state===9"
+							  @click="deleteOrder(index)" ></text>
 						</view>
-						
 						<scroll-view v-if="item.goodsList.length > 1" class="goods-box" scroll-x>
-							<view
-								v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex"
-								class="goods-item"
-							>
+							<view v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex"
+							  class="goods-item" >
 								<image class="goods-img" :src="goodsItem.image" mode="aspectFill"></image>
 							</view>
 						</scroll-view>
-						<view 
-							v-if="item.goodsList.length === 1" 
-							class="goods-box-single"
-							v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex"
-						>
+						<view v-if="item.goodsList.length === 1" class="goods-box-single"
+						  v-for="(goodsItem, goodsIndex) in item.goodsList" :key="goodsIndex" >
 							<image class="goods-img" :src="goodsItem.image" mode="aspectFill"></image>
 							<view class="right">
 								<text class="title clamp">{{goodsItem.title}}</text>

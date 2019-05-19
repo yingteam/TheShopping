@@ -31,7 +31,7 @@
 			<view class="type-item" @click="changePayType(3)">
 				<text class="icon yticon icon-erjiye-yucunkuan"></text>
 				<view class="con">
-					<text class="tit">预存款支付</text>
+					<text class="tit">一卡通支付</text>
 					<text>可用余额 ¥198.5</text>
 				</view>
 				<label class="radio">
@@ -50,7 +50,7 @@
 	export default {
 		data() {
 			return {
-				payType: 1,
+				payType: 3,
 				orderInfo: {}
 			};
 		},

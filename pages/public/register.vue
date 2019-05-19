@@ -6,9 +6,7 @@
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
 			<view class="left-top-sign">register</view>
-			<view class="welcome">
-				注册您的账号！
-			</view>
+			<view class="welcome" v-text="getTitle"></view>
 			<view class="input-content">
 				<view class="input-item">
 					<text class="tit">手机号码</text>
@@ -21,20 +19,16 @@
 						@input="inputChange"
 					/>
 				</view>
-				<view class="input-item" style="width:200px;">
+				<view class="input-item">
 					<text class="tit">验证码</text>
-					<input
-					type="number"
-					placeholder="验证码"
-					maxlength="4"
-					@input="inputChange"
-					>
+					<view style="display: flex;">
+						<input type="number" placeholder="验证码" maxlength="4" @input="inputChange" >
+						<button class="confirm-btn verify-button" @click="getVer">获取验证码</button>
 					</view>
+				</view>
 					<view class="input-item">
-						<text class="tit">密码</text>
-						<input 
-							type="mobile" 
-							value="" 
+						<text class="tit" v-text="getTip"></text>
+						<input type="mobile" 
 							placeholder="8-18位不含特殊字符的数字、字母组合"
 							placeholder-class="input-empty"
 							maxlength="20"
@@ -44,14 +38,36 @@
 							@confirm="toregister"
 						/></view>
 			</view>
-			<button class="confirm-btn" @click="getVer" :disabled="logining" style="width:100px;bottom:150px;right:-110px">获取验证码</button>
-			<button class="confirm-btn" @click="toregister" :disabled="logining">注册</button>
+			<button class="confirm-btn" @click="toregister" >注册</button>
 		</view>
 	</view>
 </template>
 
 <script>
 	export default{
+		data () {
+			return {
+				req: '',
+				mobile: ''
+			}
+		},
+		onLoad(data) {
+			this.req = data.req;
+		},
+		computed: {
+			getTitle () {
+				if (this.req === 'forget') {
+					return '这次密码要记牢喽！';
+				}
+				return '请注册您的账号！';
+			},
+			getTip () {
+				if (this.req === 'forget') {
+					return '新密码';
+				}
+				return '密码';
+			}
+		},
 		methods:{
 			navBack(){
 				uni.navigateBack();
@@ -142,9 +158,8 @@
 		flex-direction: column;
 		align-items:flex-start;
 		justify-content: center;
-		padding: 0 30upx;
+		padding: 10upx 30upx;
 		background:$page-color-light;
-		height: 120upx;
 		border-radius: 4px;
 		margin-bottom: 50upx;
 		&:last-child{
@@ -176,6 +191,13 @@
 		&:after{
 			border-radius: 100px;
 		}
+	}
+	.verify-button {
+		width: 360upx;
+		height: 66upx;
+		line-height: 66upx;
+		margin-top: -30upx;
+		font-size: 30upx;
 	}
 	.forget-section{
 		font-size: $font-sm+2upx;

@@ -7,7 +7,7 @@
 		<view class="wrapper">
 			<view class="left-top-sign">LOGIN</view>
 			<view class="welcome">
-				欢迎回来！
+				欢迎回来，请登录！
 			</view>
 			<view class="input-content">
 				<view class="input-item">
@@ -38,12 +38,12 @@
 			</view>
 			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
 			<view class="forget-section">
-				忘记密码?
+				<text @click="toRegistPage('forget')">忘记密码?</text>
 			</view>
 		</view>
 		<view class="register-section">
-			还没有账号?
-			<text @click="toRegist">马上注册</text>
+			<text>还没有账号?</text>
+			<text class="reg-link" @click="toRegistPage">马上注册</text>
 		</view>
 	</view>
 </template>
@@ -73,10 +73,10 @@
 			navBack(){
 				uni.navigateBack();
 			},
-			toRegist(){
-				uni.navigateTo({
-					url: '/pages/public/register'
-				})
+			toRegistPage (req) {
+				let url = '/pages/public/register';
+				typeof req === 'string' && (url += '?req=' + req);
+				uni.navigateTo({ url });
 			},
 			async toLogin(){
 				this.logining = true;
@@ -239,7 +239,7 @@
 		font-size: $font-sm+2upx;
 		color: $font-color-base;
 		text-align: center;
-		text{
+		.reg-link {
 			color: $font-color-spec;
 			margin-left: 10upx;
 		}

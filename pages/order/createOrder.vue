@@ -145,11 +145,11 @@
 					}
 				],
 				addressData: {
-					name: '许小星',
-					mobile: '13853989563',
-					addressName: '金九大道',
-					address: '山东省济南市历城区',
-					area: '149号',
+					name: '木大么',
+					mobile: '18753989563',
+					addressName: 'dadasd',
+					address: '四川省宜宾市',
+					area: '长江3号',
 					default: false,
 				}
 			}
