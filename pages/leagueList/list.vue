@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content"> 
 		<view class="navbar" :style="{position:headerPosition,top:headerTop}">
 			<view class="nav-item" v-for="(filterItem, index) in filterList" :key="index"
 			  :class="{current: filterIndex === index}" @click="tabClick(index)">

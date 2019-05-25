@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container"> 
 		<!-- 小程序头部兼容 -->
 		<!-- #ifdef MP -->
 		<view class="mp-search-box">
@@ -50,7 +50,7 @@
 							<text>{{ item.openTime }} 营业</text>
 							<text v-text="item.category"></text>
 							<view class="shop-address">
-								<text class="map-marker">
+								<text class="map-marker"> 
 									<i class="fa fa-map-marker" aria-hidden="true"></i>
 								</text>
 								<text class="address clamp">{{ item.address }}</text>
@@ -115,7 +115,9 @@
 			this.loadShopData();
 		},
 		onNavigationBarButtonTap() {
-			this.$api.msg('点击了加盟');
+			uni.navigateTo({
+				url:'join'
+			});
 		},
 		onPageScroll(e){
 			if(e.scrollTop >= 380){

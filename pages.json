@@ -228,6 +228,19 @@
 				"navigationBarTitleText": "历史记录"
 			}
 		}
+        ,{
+            "path" : "pages/groupbuy/groupbuy",
+            "style" : {
+				"navigationBarTitleText": "团购"
+			}
+        }
+        
+        ,{
+            "path" : "pages/league/join",
+            "style" : {
+				"navigationBarTitleText": "商家入驻"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
